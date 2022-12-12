@@ -16,7 +16,18 @@
     "79 John St, Cabramatta NSW 2166",
     "Tarlington Parade, Bonnyrigg NSW 2177",
     "120 Spencer St, Melbourne VIC 3004",
-    "64 Toorak Rd, South Yarra VIC 3141"
+    "64 Toorak Rd, South Yarra VIC 3141",
+
+    "14 Luisini Rd, Wangara WA 6065",
+    " Level 1/395 Collins St, Melbourne VIC 3000",
+    "42 Ferny Ave, Surfers Paradise QLD 4217",
+    "99 Adelaide Terrace, Perth WA 6000",
+    "1 Barrack St, Perth WA 6000",
+    "815 Hay St, Perth WA 6000",
+    "King William Rd, North Adelaide SA 5006",
+    "45 King William St, Adelaide SA 5000",
+    "Bennelong Point, Sydney NSW 2000",
+    "1 Barangaroo Ave, Barangaroo NSW 2000"
   ]
 
 puts "Cleaning database"
