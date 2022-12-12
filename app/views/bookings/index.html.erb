@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <h1>List all Bookings</h1>
+    <% @bookings.each do |booking| %>
+      <div class="p-3 mb-2">
+        <h6>
+         <strong>booking id:<%= booking.id%></strong>-
+          <%= booking.car.model%>-
+          <%= booking.start_date%> -
+          <%= booking.end_date%> -
+          <%= booking.status%>
+          <%= link_to "Show this booking", booking_path(booking) %>
+        </h6>
+      </div>
+    <% end %>
+</div>

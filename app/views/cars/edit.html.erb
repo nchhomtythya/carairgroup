@@ -1,0 +1,7 @@
+<body>
+<div class="container-sm">
+<h1>Edit info - <%= @car.model %> - <%= @car.year %></h1>
+<%= link_to "Back", cars_path %>
+<%= render "form", car: @car %>
+</div>
+</body>

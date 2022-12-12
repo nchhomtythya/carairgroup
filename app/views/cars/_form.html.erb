@@ -1,0 +1,16 @@
+<div class=".col-form-label-sm justify-content-center">
+<%= simple_form_for (car) do |f| %>
+  <%= f.input :model %>
+  <%= f.input :make %>
+  <%= f.input :year %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :transmission %>
+  <%= f.input :colour %>
+  <%= f.input :availability %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Create now :D", class: "btn btn-primary" %>
+<% end %>
+</div>

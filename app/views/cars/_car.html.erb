@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <% if car.photo.attached? %>
+      <%= cl_image_tag car.photo.key, height: 300, width: 500, crop: :fill, class: 'img-fluid' %>
+    <% else %>
+      <img
+        src="https://thumbor.forbes.com/thumbor/fit-in/960x/https://www.forbes.com/wheels/wp-content/uploads/2021/06/2022_Toyota_Corolla_Cross_1.jpg"
+        class="img-fluid"
+      />
+    <% end %>
+
+    <a href="#!">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= car.model %> <%= car.make %> <%= car.year %></h5>
+    <% car.description_as_array.first(4).each do |feature| %>
+      <p class="card-text"><%= feature %></p>
+    <% end %>
+    <%= link_to('More details', car_path(car), {class: 'btn btn-primary'}) %>
+  </div>
+</div>

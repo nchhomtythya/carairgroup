@@ -1,0 +1,42 @@
+<div class="container justify-content-center align-self-center ">
+  <div class="card" style="width: 30rem;">
+     <img src="<%= image_url(@car_image) %>" class="card-img-top w-100" alt="...">
+    <span class="btn btn-warning">  <%= link_to "Destroy the car",
+    car_path(@car),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></span>
+    <div class="card-body justify-content-center align-self-center">
+      <h5 class="card-title"><%= @car.model %></h5>
+      <ul class="card-text">
+        <li><%= @car.make %></li>
+        <li><%= @car.year %></li>
+        <li><%= @car.category %></li>
+        <li><%= @car.transmission %></li>
+        <li><%= @car.description %></li>
+        <li><%= @car.price %></li>
+      </ul>
+      <hr>
+      <p><strong>Booking confirm</strong></p>
+      <ul>
+        <% @car.bookings.each do |booking| %>
+          <li><%= booking.start_date %></li>
+          <li><%= booking.end_date %></li>
+        <% end %>
+      </ul>
+  <hr>
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @car.reviews.each do |review| %>
+      <li class="list-group-item">
+      <%= review.content %>,
+      <%= link_to "Delete", review_path(review),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </li>
+    <% end %>
+  </ul>
+  <hr>
+      <div><%= link_to "Book Now",  new_car_booking_path(@car), class: "btn btn-gradient" %></div>
+    </div>
+    <%= link_to "Add Review", new_car_review_path(@car) %>
+    <%= link_to "Back", cars_path %>
+    <%= link_to "Edit", edit_car_path %>
+    <%= link_to "Show all booking", car_bookings_path(@car) %>
+  </div>

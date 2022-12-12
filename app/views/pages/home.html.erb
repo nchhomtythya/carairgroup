@@ -1,0 +1,120 @@
+
+
+<head>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/moving-backwards-ute-girl-with-black-hair-trying-her-brand-new-expensive-car-automobile-salon_146671-16083.jpg?w=1480&t=st=1669906392~exp=1669906992~hmac=102b1c1bcc829bf49c1a0373207a6a6dd121e68a2cb1b35286af395bb5c85d62;">
+  <div class="container">
+    <h1>Find, book, and unlock cars.</h1>
+    <p>Get a car wherever and whenever you need it with your iOS or Android device.</p>
+    <div><%= link_to "Start Now",  cars_path, class: "btn btn-gradient" %></div>
+  </div>
+</div>
+
+
+  </section>
+  <!-- Section: Social media -->
+        <section class="text-center ">
+          <br>
+          <h4 class="mb-5"><strong>Rent cars by the hour, day, week or longer</strong></h4>
+          <div class="row">
+            <% @cars.each do |car| %>
+              <div class="col-12 col-md-4 mb-4 d-flex justify-content-between">
+                <%= render 'cars/car', car: car %>
+              </div>
+            <% end %>
+          </div>
+        </section>
+
+
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" />
+    <label class="form-label" for="form1">Search</label>
+  </div>
+  <button type="button" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-secondary"></i>CarASAP
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Cars</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vans</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">4WD</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3 text-secondary"></i> New York Ave, Melbourne VIC, Australia</p>
+          <p>
+            <i class="fas fa-envelope me-3 text-secondary"></i>
+            info@carairbnb.com
+          </p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> +3 234 567 88</p>
+          <p><i class="fas fa-print me-3 text-secondary"></i> +4 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https:/github.com/">NEV.com</a>
+  </div>
+  <!-- Copyright -->
+
+<!-- Footer -->

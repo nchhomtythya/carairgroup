@@ -1,0 +1,52 @@
+<div class="container justify-content-center">
+  <section>
+    <div class="row">
+      <div class="col-md-6 gx-5 mb-4">
+        <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+          <img src="https://img.freepik.com/free-photo/young-man-driving-modern-car_651396-2412.jpg?w=1060&t=st=1670642047~exp=1670642647~hmac=cfbebbfff93fc105288647e610964a558af4d9ff315a29d5c7cc3e20d56a3830" class="img-fluid" />
+              <%= link_to "Create", new_car_path %>
+          <a href="#">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 gx-5 mb-4">
+        <h4><strong>Tap, Book and drive!</strong></h4>
+        <p class="text-muted">
+          Rent a car using the car application. No rental counters, no access cards and no worries.
+
+          Hundreds of cars near you
+          Rent cars owned by locals - parked on your street, or near the airport.
+
+          Only pay for what you need
+          Rent by the hour or day, week or longer
+        </p>
+      </div>
+  </section>
+  </div>
+
+  <section class="mb-5">
+    <div class="container pt-4">
+      <h4 class="mb-4">Pick the car of your dreams</h4>
+      <div class="row">
+        <% @cars.each do |car| %>
+          <div class="mb-2 col-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to car.model, car_path(car) %> - <%= link_to car.year, car_path(car) %></h5>
+                <p class="card-text"><%= car.description%></p>
+                <%= link_to "book", new_car_booking_path(car) %>
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <% if car.photo.attached? %>
+                    <%= cl_image_tag car.photo.key, crop: :thumb %>
+                  <% end %>
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
