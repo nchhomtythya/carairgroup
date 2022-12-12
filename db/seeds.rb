@@ -42,12 +42,13 @@ puts "Creating cars"
     year: Faker::Vehicle.year,
     category: Faker::Vehicle.car_type,
     description: Faker::Vehicle.standard_specs,
-    price: rand(20000..30000),
+    price: rand(8000.00..300_000.00),
     availability: true,
     user_id: 1,
     transmission: Faker::Vehicle.drive_type,
     colour: Faker::Vehicle.color,
     address: addresses.sample
+
     # photo: Faker::LoremFlickr.unique.image
   )
   car.save

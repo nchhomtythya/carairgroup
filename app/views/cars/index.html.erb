@@ -25,22 +25,31 @@
       </div>
   </section>
   </div>
+<h4 class="mb-4">Search the car of your dreams</h4>
+<%= form_with url: cars_path, method: :get, class: "d-flex my-3" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a car"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
   <section class="mb-5">
     <div class="container pt-4">
-      <h4 class="mb-4">Pick the car of your dreams</h4>
       <div class="row">
         <% @cars.each do |car| %>
           <div class="mb-2 col-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title"><%= link_to car.model, car_path(car) %> - <%= link_to car.year, car_path(car) %></h5>
-                <p class="card-text"><%= car.description%></p>
-                <%= link_to "book", new_car_booking_path(car) %>
+                <h5 class="card-title"><%= link_to car.make, car_path(car) %></h5>
+                <h6> <%= car.year %> - Color <%= car.colour %> </h6>
+                <p><strong><%= car.price %> AUD</strong></p>
+                <%= car.description %>
+                <%= link_to "Book Now", new_car_booking_path(car) %>
+
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <% if car.photo.attached? %>
-                    <%= cl_image_tag car.photo.key, crop: :thumb %>
-                  <% end %>
+<!-- Insert here-->
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </div>
               </div>
