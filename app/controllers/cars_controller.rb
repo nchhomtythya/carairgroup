@@ -33,6 +33,7 @@ class CarsController < ApplicationController
 
   def show
     @car_image = ["car1.jpg", "car2.jpg", "car3.jpg", "car4.jpg", "car5.jpg","car6.jpg", "car8.jpg","car9.jpg","car9.jpg","car10.jpg","car11.jpg", "car12.jpg", "car13.jpg", "car15.jpg"].sample
+    @review = Review.new
   end
 
   def new

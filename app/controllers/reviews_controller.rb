@@ -1,25 +1,25 @@
 class ReviewsController < ApplicationController
-  before_action :set_car, only: %i[new create]
-
-  def new
-    @review = Review.new
-  end
+  before_action :set_car, only: :create
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
     @review.car = @car
-    if @review.save
-      redirect_to car_path(@car)
-    else
-      render :new, status: :unprocessable_entity
+    @review.user = current_user
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to car_reviews_path(@car) }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render 'cars/show', status: :unprocessable_entity }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
     end
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to car_path(@review.car), status: :see_other
+    redirect_to car_path(@review), status: :see_other
   end
 
   private

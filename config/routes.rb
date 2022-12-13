@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :cars do
     resources :bookings, only: %i[index new create edit update]
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: :create
   end
-  resources :bookings, :reviews, only: %i[destroy index edit update show]
+  resources :bookings, only: %i[destroy index edit update show]
+  resources :reviews, only: :destroy
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
